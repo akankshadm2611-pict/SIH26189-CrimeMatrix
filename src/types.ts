@@ -74,7 +74,11 @@ export interface EvidenceFile {
   id: string;
   caseId: string;
   fileName: string;
+<<<<<<< HEAD
   fileType: 'Document' | 'Image' | 'Audio' | 'Video' | 'Forensic';
+=======
+  fileType: 'Document' | 'Image' | 'Audio' | 'Video';
+>>>>>>> aa42170 (CrimeMtrix1)
   description: string;
   uploadedBy: string;
   uploadedByRole: UserRole;

@@ -594,6 +594,48 @@ export const initialCases: Case[] = [
         fileSize: '4.8 MB',
         url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80',
       },
+<<<<<<< HEAD
+=======
+      {
+        id: 'ev-8942-fsl-1147',
+        caseId: 'CR-2026-8942',
+        fileName: 'FSL_MH_2026_1147_Digital_Evidence_Report.pdf',
+        fileType: 'Document',
+        description: 'Digital Examination of seized Samsung Galaxy A54 smartphone, Airtel SIM, and 32GB microSD card under custody protocol.',
+        notes: 'Maharashtra State Lab Digital Evidence Report with key findings on messages and GPS timelines.',
+        uploadedBy: 'Dr. A. Kulkarni (Sr. Scientific Officer)',
+        uploadedByRole: 'Police Officer',
+        uploadedAt: '16 Aug 2026, 11:30 AM',
+        fileSize: '3.8 MB',
+        url: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800&auto=format&fit=crop&q=80',
+      },
+      {
+        id: 'ev-8942-fsl-1',
+        caseId: 'CR-2026-8942',
+        fileName: 'FSL_Chemical_Ballistics_Spectral_Analysis.pdf',
+        fileType: 'Document',
+        description: 'Spectroscopic chemical trace examination of gunpowder residue and cartridge casing alloys recovered from vault door lock mechanism.',
+        notes: 'Certified laboratory findings with examination results and firing pin match report.',
+        uploadedBy: 'Dr. Sanjeev Roy (Sr. Scientific Officer)',
+        uploadedByRole: 'Police Officer',
+        uploadedAt: '16 Jul 2026, 11:15 AM',
+        fileSize: '3.6 MB',
+        url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop&q=80',
+      },
+      {
+        id: 'ev-8942-fsl-2',
+        caseId: 'CR-2026-8942',
+        fileName: 'Apex_Private_Toxicology_Screening.pdf',
+        fileType: 'Document',
+        description: 'Privately submitted chemical screening report purporting to show trace sedative presence.',
+        notes: 'Submitted by defense counsel.',
+        uploadedBy: 'Sub-Inspector Vikram Sharma',
+        uploadedByRole: 'Police Officer',
+        uploadedAt: '17 Jul 2026, 03:45 PM',
+        fileSize: '2.1 MB',
+        url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop&q=80',
+      },
+>>>>>>> aa42170 (CrimeMtrix1)
     ],
     timeline: [
       {
@@ -803,7 +845,38 @@ export const initialCases: Case[] = [
     courtHearingDate: '2026-09-28T11:00',
     courtHearingLocation: 'Solapur District & Sessions Court Room 3',
     courtHearingNotes: 'Forensic ballistics recovery report and interstate vehicle registration seizure logs to be submitted.',
+<<<<<<< HEAD
     evidence: [],
+=======
+    evidence: [
+      {
+        id: 'ev-5521-fsl-1',
+        caseId: 'CR-2026-5521',
+        fileName: 'RFSL_Solapur_Questioned_Documents_Signature_Analysis.pdf',
+        fileType: 'Document',
+        description: 'Spectral comparison and ink luminescence examination of disputed signature on land conveyance deed Q-1 against court admitted specimens.',
+        notes: 'Questioned document examination report with comparison charts.',
+        uploadedBy: 'SDPO Arvind Shinde',
+        uploadedByRole: 'Subdivision Level',
+        uploadedAt: '12 Aug 2026, 04:10 PM',
+        fileSize: '4.2 MB',
+        url: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800&auto=format&fit=crop&q=80',
+      },
+      {
+        id: 'ev-5521-fsl-unverified',
+        caseId: 'CR-2026-5521',
+        fileName: 'FSL_Solapur_Chemical_Viscera_Dispatch_Certificate.pdf',
+        fileType: 'Document',
+        description: 'Chemical dispatch certificate received from Regional Forensic Science Laboratory, Solapur.',
+        notes: 'Submitted under sealed parcel for judicial custody record.',
+        uploadedBy: 'Inspector Rajesh Deshmukh',
+        uploadedByRole: 'Police Officer',
+        uploadedAt: '18 Aug 2026, 09:30 AM',
+        fileSize: '3.4 MB',
+        url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop&q=80',
+      },
+    ],
+>>>>>>> aa42170 (CrimeMtrix1)
     timeline: [
       {
         id: 'tl-5521-1',

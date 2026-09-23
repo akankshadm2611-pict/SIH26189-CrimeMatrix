@@ -1099,6 +1099,10 @@ export default function App() {
             onTakeChargeSubdivision={handleTakeChargeSubdivision}
             onUpdateCaseDetails={handleUpdateCaseDetails}
             onEscalateToHigherAuthority={handleEscalateToHigherAuthority}
+<<<<<<< HEAD
+=======
+            onUpdateCaseEvidence={handleUpdateEvidence}
+>>>>>>> aa42170 (CrimeMtrix1)
             themeMode={themeMode}
           />
         ) : currentView === 'citizen-complaints' ? (

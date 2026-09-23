@@ -646,6 +646,15 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
     return mergeNodesWithCaseSuspects(savedNodes, c, suspects);
   });
 
+<<<<<<< HEAD
+=======
+  // Keep a stable ref to current nodes so handleFitView never forces re-renders or shifts other templates
+  const nodesRef = useRef<GraphNode[]>(nodes);
+  useEffect(() => {
+    nodesRef.current = nodes;
+  }, [nodes]);
+
+>>>>>>> aa42170 (CrimeMtrix1)
   const [edges, setEdges] = useState<GraphEdge[]>(() => {
     try {
       const saved = localStorage.getItem(storageKeyEdges);
@@ -1075,6 +1084,48 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
       }
     };
 
+<<<<<<< HEAD
+=======
+    const handleGlobalTouchMove = (e: TouchEvent) => {
+      if (e.touches.length !== 1) return;
+      const touch = e.touches[0];
+      const currentZoom = Number.isFinite(zoom) && zoom > 0.1 ? zoom : 0.85;
+      const nodeStart = dragStartRef.current;
+      const panStart = panStartRef.current;
+
+      if (draggingNodeId && nodeStart) {
+        const dx = (touch.clientX - nodeStart.mouseX) / currentZoom;
+        const dy = (touch.clientY - nodeStart.mouseY) / currentZoom;
+        if (Number.isFinite(dx) && Number.isFinite(dy)) {
+          const nextX = Math.max(10, Math.min(1350, Math.round(nodeStart.nodeX + dx)));
+          const nextY = Math.max(10, Math.min(750, Math.round(nodeStart.nodeY + dy)));
+          setNodes((prev) =>
+            prev.map((n) =>
+              n.id === draggingNodeId
+                ? {
+                    ...n,
+                    x: nextX,
+                    y: nextY,
+                  }
+                : n
+            )
+          );
+        }
+      } else if (isPanning && panStart) {
+        const dx = touch.clientX - panStart.mouseX;
+        const dy = touch.clientY - panStart.mouseY;
+        if (Number.isFinite(dx) && Number.isFinite(dy)) {
+          const nextPanX = Math.max(-700, Math.min(700, Math.round(panStart.startPanX + dx)));
+          const nextPanY = Math.max(-450, Math.min(450, Math.round(panStart.startPanY + dy)));
+          setPan({
+            x: nextPanX,
+            y: nextPanY,
+          });
+        }
+      }
+    };
+
+>>>>>>> aa42170 (CrimeMtrix1)
     const handleGlobalUp = () => {
       setIsPanning(false);
       panStartRef.current = null;
@@ -1084,9 +1135,21 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
 
     window.addEventListener('mousemove', handleGlobalMove);
     window.addEventListener('mouseup', handleGlobalUp);
+<<<<<<< HEAD
     return () => {
       window.removeEventListener('mousemove', handleGlobalMove);
       window.removeEventListener('mouseup', handleGlobalUp);
+=======
+    window.addEventListener('touchmove', handleGlobalTouchMove, { passive: false });
+    window.addEventListener('touchend', handleGlobalUp);
+    window.addEventListener('touchcancel', handleGlobalUp);
+    return () => {
+      window.removeEventListener('mousemove', handleGlobalMove);
+      window.removeEventListener('mouseup', handleGlobalUp);
+      window.removeEventListener('touchmove', handleGlobalTouchMove);
+      window.removeEventListener('touchend', handleGlobalUp);
+      window.removeEventListener('touchcancel', handleGlobalUp);
+>>>>>>> aa42170 (CrimeMtrix1)
     };
   }, [isPanning, draggingNodeId, zoom]);
 
@@ -1146,6 +1209,7 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
       return;
     }
 
+<<<<<<< HEAD
     if (draggingNodeId && nodeStart) {
       const dx = (e.clientX - nodeStart.mouseX) / currentZoom;
       const dy = (e.clientY - nodeStart.mouseY) / currentZoom;
@@ -1175,6 +1239,10 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
           y: nextPanY,
         });
       }
+=======
+    if (draggingNodeId || isPanning) {
+      return;
+>>>>>>> aa42170 (CrimeMtrix1)
     }
   };
 
@@ -1218,6 +1286,7 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
       return;
     }
 
+<<<<<<< HEAD
     if (draggingNodeId && nodeStart) {
       const dx = (touch.clientX - nodeStart.mouseX) / currentZoom;
       const dy = (touch.clientY - nodeStart.mouseY) / currentZoom;
@@ -1247,6 +1316,10 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
           y: nextPanY,
         });
       }
+=======
+    if (draggingNodeId || isPanning) {
+      return;
+>>>>>>> aa42170 (CrimeMtrix1)
     }
   };
 
@@ -1354,8 +1427,15 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
   };
 
   // Fits all nodes into the current view, scaling and centering appropriately for any device (including mobile phones)
+<<<<<<< HEAD
   const handleFitView = useCallback(() => {
     if (!containerRef.current || nodes.length === 0) {
+=======
+  // Uses nodesRef so dragging a template does not alter function identity or trigger canvas jumping
+  const handleFitView = useCallback(() => {
+    const currentNodes = nodesRef.current;
+    if (!containerRef.current || currentNodes.length === 0) {
+>>>>>>> aa42170 (CrimeMtrix1)
       const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
       setZoom(isMobile ? 0.42 : 0.75);
       setPan({ x: 0, y: 0 });
@@ -1371,7 +1451,11 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
     let minY = Infinity;
     let maxY = -Infinity;
 
+<<<<<<< HEAD
     nodes.forEach((n) => {
+=======
+    currentNodes.forEach((n) => {
+>>>>>>> aa42170 (CrimeMtrix1)
       const { w: width, h: height } = getNodeDimensions(n.type);
       minX = Math.min(minX, n.x);
       maxX = Math.max(maxX, n.x + width);
@@ -1405,6 +1489,7 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
 
     setZoom(Number(fitZoom.toFixed(2)));
     setPan({ x: nextPanX, y: nextPanY });
+<<<<<<< HEAD
   }, [nodes]);
 
   // Automatically fit network to screen on open or resize (makes mobile immediately workable)
@@ -1414,6 +1499,29 @@ export const CaseNetworkGraphModal: React.FC<CaseNetworkGraphModalProps> = ({
         handleFitView();
       }, 70);
       return () => clearTimeout(timer);
+=======
+  }, []);
+
+  // Track initial auto-fit so it only runs once upon modal opening for each case session,
+  // preventing other templates from shifting or camera jumping when any template is moved
+  const hasFittedOnOpenRef = useRef<boolean>(false);
+
+  useEffect(() => {
+    hasFittedOnOpenRef.current = false;
+  }, [c.id]);
+
+  useEffect(() => {
+    if (isOpen) {
+      if (!hasFittedOnOpenRef.current) {
+        hasFittedOnOpenRef.current = true;
+        const timer = setTimeout(() => {
+          handleFitView();
+        }, 70);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      hasFittedOnOpenRef.current = false;
+>>>>>>> aa42170 (CrimeMtrix1)
     }
   }, [isOpen, handleFitView]);
 

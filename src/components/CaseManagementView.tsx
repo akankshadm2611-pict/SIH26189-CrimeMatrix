@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { Case, User, Suspect, CrimeType } from '../types';
+=======
+import { Case, User, Suspect, CrimeType, EvidenceFile } from '../types';
+>>>>>>> aa42170 (CrimeMtrix1)
 import {
   FolderLock,
   Search,
@@ -69,6 +73,10 @@ interface CaseManagementViewProps {
     caseId: string,
     data: { description: string; district: string; districtOfficerId: string; districtOfficerName: string }
   ) => void;
+<<<<<<< HEAD
+=======
+  onUpdateCaseEvidence?: (caseId: string, updatedEvidence: EvidenceFile) => void;
+>>>>>>> aa42170 (CrimeMtrix1)
   themeMode?: 'dark' | 'bright';
 }
 
@@ -93,6 +101,10 @@ export const CaseManagementView: React.FC<CaseManagementViewProps> = ({
   onTakeChargeSubdivision,
   onUpdateCaseDetails,
   onEscalateToHigherAuthority,
+<<<<<<< HEAD
+=======
+  onUpdateCaseEvidence,
+>>>>>>> aa42170 (CrimeMtrix1)
   themeMode = 'bright',
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -505,6 +517,7 @@ export const CaseManagementView: React.FC<CaseManagementViewProps> = ({
             </p>
           </div>
         </div>
+<<<<<<< HEAD
 
         {/* DSP Action Button: Create New Case */}
         {currentUser.role === 'DSP' && (
@@ -517,6 +530,8 @@ export const CaseManagementView: React.FC<CaseManagementViewProps> = ({
             <span>Create New Case</span>
           </button>
         )}
+=======
+>>>>>>> aa42170 (CrimeMtrix1)
       </div>
 
       {/* Subdivision Level Two Options: 'All Cases' vs 'Major Cases' */}

@@ -442,8 +442,250 @@ export interface OcrPreset {
   extractedData: Partial<FirChecklistState>;
 }
 
+<<<<<<< HEAD
 export const sampleOcrPresets: OcrPreset[] = [
   {
+=======
+// Authentic Maharashtra Police FIR (Form No. 1 / Sec 173 BNSS) - Hinjawadi PS ATM Robbery
+export const hinjawadiAtmRobberyFirData: FirChecklistState = {
+  // 1. FIR / Police Station Details
+  state: 'Maharashtra',
+  district: 'Pune (Rural)',
+  policeStation: 'Hinjawadi Police Station',
+  firNumber: '312/2026',
+  year: '2026',
+  regDate: '2026-07-03',
+  regTime: '09:45',
+  generalDiaryNo: 'GD-554/2026',
+  infoReceivedDateTime: '2026-07-03 02:40 AM',
+  infoMode: 'Written',
+
+  // 2. Offence / Legal Provisions
+  applicableAct: 'Bharatiya Nyaya Sanhita, 2023 (BNS)',
+  bnsSections: 'Section 309(4), Section 331, Section 317, Section 61 (Criminal Conspiracy)',
+  specialLawSections: 'Prevention of Damage to Public Property Act (Clause 2 & 4)',
+  subSectionClause: 'Clause 2 & 4',
+  offenceCategory: 'ATM Robbery / Theft',
+
+  // 3. Date, Time and Occurrence of Offence
+  occurrenceDateFrom: '2026-07-03',
+  occurrenceDateTo: '2026-07-03',
+  occurrenceTimeFrom: '02:10 AM',
+  occurrenceTimeTo: '02:25 AM',
+  approxTime: 'Around 02:15 AM',
+  isContinuingOffence: false,
+  complainantAwarenessInfo: 'Security guard found the ATM shutter open and immediately informed the police.',
+  infoGivenToPoliceDateTime: '03/07/2026 02:40 AM',
+
+  // 4. Place of Occurrence
+  exactAddress: 'State Bank of India ATM, Plot No. 17, Rajiv Gandhi Infotech Park, Hinjawadi Phase 1',
+  houseBuildingNo: 'ATM Kiosk (Outside SBI Branch)',
+  streetRoad: 'Phase 1 Main Road',
+  areaLocalityVillage: 'Hinjawadi IT Park',
+  cityTown: 'Pune',
+  placeDistrict: 'Pune (Rural)',
+  placeState: 'Maharashtra',
+  pinCode: '411057',
+  nearestLandmark: 'Opposite Wipro Circle',
+  jurisdictionPs: 'Hinjawadi Police Station',
+  directionFromPs: 'South-East',
+  distanceFromPs: '2.3 km',
+  beatChowkyOutpost: 'Beat No. 5 / Hinjawadi Chowky',
+  gpsCoordinates: '18.5902, 73.7389',
+
+  // 5. Informant / Complainant Details
+  informantFullName: 'Rohan Patil',
+  informantParentOrSpouse: 'Suresh Patil',
+  informantAgeDob: '32 Years (DOB: 11/06/1994)',
+  informantGender: 'Male',
+  informantNationality: 'Indian',
+  informantOccupation: 'Security Officer (SBI)',
+  informantMobile: '+91 97654 32109',
+  informantAltPhone: '+91 20 4123 8890',
+  informantEmail: 'rohan.patil@sbi.co.in',
+  informantCurrentAddress: 'B-503, Yashwant Heights, Hinjawadi, Pune - 411057',
+  informantPermanentAddress: 'Same as current address',
+  informantVillageCity: 'Pune',
+  informantDistrict: 'Pune (Rural)',
+  informantState: 'Maharashtra',
+  informantPin: '411057',
+  informantIdType: 'PAN Card',
+  informantIdNumber: 'ABCPP1234D',
+  informantRelToVictim: 'Bank Staff (Informant)',
+  informantRelToAccused: 'Unknown',
+
+  // 6. Victim / Person Aggrieved Details
+  victimIsSameAsInformant: false,
+  victimFullName: 'State Bank of India (Property - ATM)',
+  victimParentOrSpouse: 'N/A (Institution)',
+  victimAgeDob: 'N/A',
+  victimGender: 'Institutional / N/A',
+  victimNationality: 'Indian',
+  victimOccupation: 'Banking Institution',
+  victimMobile: '1800 1234 (SBI Customer Care)',
+  victimEmail: 'customercare@sbi.co.in',
+  victimCurrentAddress: 'SBI Branch, Plot No. 17, Rajiv Gandhi Infotech Park, Hinjawadi Phase 1, Pune',
+  victimPermanentAddress: 'State Bank Bhavan, Madame Cama Road, Nariman Point, Mumbai',
+  victimIdDetails: 'RBI Institutional License: BANK-SBI-MH-01',
+  victimRelToInformant: 'Employer (Bank)',
+  victimNatureOfLoss: 'Cash stolen from ATM (estimated Rs. 18,75,000/-), damage to ATM machine and CCTV wiring.',
+  victimMedicalDetails: 'Not applicable',
+
+  // 7. Accused / Suspect / Unknown Person Details
+  accusedFullName: 'Unknown Person 1 & Unknown Person 2',
+  accusedAlias: 'Not known',
+  accusedParentOrSpouse: 'Unknown',
+  accusedApproxAge: '25 - 35 Years (2 persons)',
+  accusedGender: 'Male (Presumed)',
+  accusedNationality: 'Indian (Suspected)',
+  accusedOccupation: 'Unknown',
+  accusedCurrentAddress: 'Unknown (Absconding towards Hinjawadi Phase 3)',
+  accusedPermanentAddress: 'Unknown',
+  accusedMobile: 'Under investigation (Tower dump CDR requested)',
+  accusedSocialOrEmail: 'None known',
+  accusedVehicleNumber: 'MH-12-XX-4590 (Black Pulsar Motorcycle - suspected)',
+  accusedPhysicalDesc: 'Person 1: approx 5 ft 9 in, medium build, wearing black hoodie, jeans, gloves, face mask. Person 2: approx 5 ft 7 in, slim build, wearing dark jacket, cap, face mask.',
+  accusedHeightBuild: '5 ft 7 in to 5 ft 9 in, medium/slim athletic build',
+  accusedComplexionHair: 'Concealed by dark hoods and face masks',
+  accusedClothing: 'Black hoodie, dark windcheater jacket, dark trousers, heavy gloves',
+  accusedMarksTattoos: 'Not visible (faces and extremities covered)',
+  accusedPhotoCctvRef: 'Cam-01 (ATM front), Cam-02 (road) - timestamp 02:13 hrs',
+  accusedCount: '2',
+
+  // 8. Witness Details
+  witnessFullName: 'Mahesh Jadhav (Security Guard)',
+  witnessAge: '40 Years',
+  witnessGender: 'Male',
+  witnessParentOrSpouse: 'Dattatray Jadhav',
+  witnessAddress: 'Security Quarters, Rajiv Gandhi Infotech Park, Hinjawadi Phase 1, Pune',
+  witnessMobile: '+91 98901 66789',
+  witnessOccupation: 'Private Security Guard (Eagle Security Services)',
+  witnessRelToVictim: 'On-duty Security Guard at premises',
+  witnessStatementKnowledge: 'Heard loud noise, saw two masked men using a gas cutter and fleeing in a black motorcycle.',
+  witnessSupportingMaterial: 'Immediate distress call record logged at 02:26 AM',
+
+  // 9. Detailed Statement / Incident Narrative
+  incidentNarrative: 'On 03 July 2026 at approximately 02:15 AM, two unidentified men arrived at the SBI ATM located at Hinjawadi Phase 1, Pune. They were wearing masks and used a gas cutter to open the ATM. The alarm system and CCTV wiring were damaged. The accused stole approximately Rs. 18,75,000/- from the cash cassettes and fled the scene on a black motorcycle towards Hinjawadi Phase 3. The incident was witnessed by the security guard who immediately informed the police. CCTV footage and physical evidence are being collected for further investigation.',
+
+  // 10. Property / Articles Involved
+  propertyType: 'Cash Currency',
+  propertyDescription: 'Cash stolen from ATM cassettes (Indian Rupee denominations 500 & 200)',
+  propertyOwner: 'State Bank of India',
+  propertyMakeBrand: 'NCR / Diebold ATM Machine cash cassettes',
+  propertyModel: 'ATM Cassettes Model 6625',
+  propertyColour: 'Metallic Gray cassettes',
+  propertySerialNo: 'CAS-SBI-9912, CAS-SBI-9913',
+  propertyImeiNo: 'N/A',
+  propertyVehicleRegNo: 'MH-12-XX-4590',
+  propertyQuantity: '3 Cash Cassettes containing currency notes',
+  propertyApproxValue: '1875000',
+  propertyDateLostStolen: '2026-07-03',
+  propertyRecoveredStatus: 'No',
+  propertyRecoveryDetails: 'Search underway; highway checkpoints and toll plazas alerted.',
+
+  // 11. Evidence / Supporting Material
+  evidenceTypes: ['CCTV Footage', 'Physical Evidence', 'Digital Log'],
+  evidenceDescription: 'Gas cutter gas cylinder residue, ATM outer casing pry marks, DVR CCTV recording (02:00 to 02:35 AM), ATM sensor tamper logs.',
+  evidenceDateTimeObtained: '2026-07-03 03:15 AM',
+
+  // 12. Cyber / Digital Information
+  cyberPhone: '+91 97654 32109',
+  cyberEmail: 'ps.hinjawadi@mahapolice.gov.in',
+  cyberUsername: 'sbi_atm_hinjawadi_ph1',
+  cyberPlatform: 'SBI Central Banking ATM Monitoring Network',
+  cyberWebsiteUrl: 'https://bank.sbi',
+  cyberBankDetails: 'State Bank of India, Hinjawadi Branch, IFSC: SBIN0012345',
+  cyberUpiId: '',
+  cyberTransactionId: '',
+  cyberTxnDateTime: '2026-07-03 02:15 AM',
+  cyberAmountInvolved: 'Rs. 18,75,000',
+  cyberDeviceType: 'ATM Terminal & Network Switch',
+  cyberImei: '',
+  cyberIpAddress: '10.24.118.42',
+  cyberScreenshotsOrExports: 'CCTV video MP4 export & electronic sensor log',
+  cyberOtherIdentifiers: 'ATM Machine ID: SBI-HINJ-004',
+
+  // 13. Injury / Medical Details
+  injuredPersonName: 'None (No physical assault reported)',
+  injuryDateTime: '',
+  injuryDescription: 'No physical injuries; security guard was outside the kiosk booth.',
+  treatmentPlace: 'N/A',
+  hospitalName: 'N/A',
+  mlcReportNo: 'N/A',
+  doctorDetails: 'N/A',
+  medicalDocsAttached: 'No',
+  fatalityOccurred: 'No',
+
+  // 14. Vehicle Details
+  vehicleType: 'Motorcycle',
+  vehicleRegNo: 'MH-12-XX-4590',
+  vehicleMake: 'Bajaj Pulsar',
+  vehicleModel: 'Pulsar 220F / 150',
+  vehicleColour: 'Black',
+  vehicleOwnerName: 'Under verification with RTO Pune Rural',
+  vehicleDriverName: 'Unknown Accused Operative',
+  vehicleChassisNo: 'Under RTO tracing',
+  vehicleEngineNo: 'Under RTO tracing',
+
+  vehicleRoleInIncident: 'Getaway vehicle used by suspects',
+  vehiclePhotoRef: 'CCTV Grab Frame #0442',
+
+  // 15. Related / Previous Complaints or Cases
+  prevComplaintNo: 'N/A',
+  prevFirNo: 'N/A',
+  prevPoliceStation: 'Hinjawadi Police Station',
+  prevDistrictState: 'Pune, Maharashtra',
+  prevDate: '',
+  prevIncidentNature: 'No prior incident recorded at this specific ATM kiosk',
+  prevCaseRelationship: 'First occurrence reported by SBI e-surveillance',
+  prevExistingDisputeThreat: 'None reported prior to incident',
+  prevConnectedReference: 'CCTV footage ref: SBI-HINJ-ATM-0703',
+
+  // 16. Action Taken / Investigation Transfer
+  policeFirNo: 'CR-2026-312 / Hinjawadi',
+  policeLegalSections: 'BNS 309(4) Robbery, BNS 324(4) Mischief causing damage, BNS 3(5) Common Intention',
+  policeGdRef: 'GD-554/2026',
+  policeJurisdictionVerified: 'Yes - Within Hinjawadi PS Beat No. 3',
+  officerReceivingInfo: 'ASI S. Deshmukh (Badge #MH/PS/3412)',
+  officerRegisteringFir: 'PSI Neha Kulkarni (Badge #MH/PS/2765)',
+  investigatingOfficerRankName: 'PSI Neha Kulkarni (Hinjawadi PS)',
+  investigationCaseRefNo: 'CR-2026-312 / Hinjawadi',
+  actionTaken: 'Registered FIR under Section 173 BNSS. Crime Scene investigated, Panchnama drawn, CCTV seized, teams dispatched.',
+  transferPsInfo: 'N/A - Offence occurred fully within Hinjawadi PS jurisdiction.',
+  arrestBailInfo: 'Accused unidentified; search operations actively underway.',
+  statutoryEntries: 'Entry recorded in General Diary under No. GD-554/2026 at 09:45 hrs.',
+
+  // 17. Informant Verification / Acknowledgement
+  informantSignature: 'Rohan Patil',
+  informantThumbImpression: false,
+  informantAckDate: '2026-07-03',
+  informantAckPlace: 'Hinjawadi Police Station',
+  informantPreferredContact: 'Mobile (+91 97654 32109)',
+  firCopyReceivedByInformant: true,
+
+  // 18. Police Officer Authentication
+  officerAuthName: 'PSI Neha Kulkarni',
+  officerAuthRank: 'Police Sub-Inspector (PSI)',
+  officerAuthBuckleId: 'MH/PS/2765',
+  officerAuthStation: 'Hinjawadi Police Station, Pune Rural',
+  officerAuthSignature: 'PSI Neha Kulkarni',
+  officerAuthDateTime: '2026-07-03 09:45 hrs',
+  officialSealAffixed: true,
+};
+
+export const sampleOcrPresets: OcrPreset[] = [
+  {
+    id: 'preset-hinjawadi-atm',
+    name: 'Maharashtra Police FIR (Form No. 1): SBI ATM Robbery - Hinjawadi',
+    badge: 'ATM Robbery / BNS 309(4)',
+    crimeType: 'ATM Robbery',
+    summary: 'Official Maharashtra Police FIR (Form No. 1, Sec 173 BNSS). Hinjawadi PS, FIR 312/2026, Complainant Rohan Patil, Rs 18.75 Lakhs cash stolen.',
+    extractedData: {
+      ...hinjawadiAtmRobberyFirData,
+    },
+  },
+  {
+>>>>>>> aa42170 (CrimeMtrix1)
     id: 'preset-bank-heist',
     name: 'FIR Copy: City Central Bank Armed Robbery',
     badge: 'Armed Robbery / BNS 309(4)',
@@ -452,7 +694,10 @@ export const sampleOcrPresets: OcrPreset[] = [
     extractedData: {
       ...initialFirState,
       firNumber: `FIR-2026-8942`,
+<<<<<<< HEAD
       policeFirNo: `CR-2026-8942`,
+=======
+>>>>>>> aa42170 (CrimeMtrix1)
       offenceCategory: 'Armed Robbery',
       informantFullName: 'Rajesh Sharma',
       victimFullName: 'City Central Bank & Staff',

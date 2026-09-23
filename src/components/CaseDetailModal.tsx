@@ -555,8 +555,11 @@ export const CaseDetailModal: React.FC<CaseDetailModalProps> = ({
       setFileType('Video');
     } else if (file.type.startsWith('audio/')) {
       setFileType('Audio');
+<<<<<<< HEAD
     } else if (file.name.toLowerCase().includes('report') || file.name.toLowerCase().includes('analysis') || file.name.toLowerCase().includes('forensic')) {
       setFileType('Forensic');
+=======
+>>>>>>> aa42170 (CrimeMtrix1)
     } else {
       setFileType('Document');
     }
@@ -663,6 +666,7 @@ export const CaseDetailModal: React.FC<CaseDetailModalProps> = ({
   const getFileIcon = (type: EvidenceFile['fileType']) => {
     switch (type) {
       case 'Image':
+<<<<<<< HEAD
         return <Image className="w-4 h-4 text-emerald-400" />;
       case 'Video':
         return <Video className="w-4 h-4 text-purple-400" />;
@@ -670,6 +674,15 @@ export const CaseDetailModal: React.FC<CaseDetailModalProps> = ({
         return <Music className="w-4 h-4 text-amber-400" />;
       default:
         return <FileText className="w-4 h-4 text-blue-400" />;
+=======
+        return <Image className={`w-4 h-4 ${themeMode === 'bright' ? 'text-emerald-600' : 'text-emerald-400'}`} />;
+      case 'Video':
+        return <Video className={`w-4 h-4 ${themeMode === 'bright' ? 'text-purple-600' : 'text-purple-400'}`} />;
+      case 'Audio':
+        return <Music className={`w-4 h-4 ${themeMode === 'bright' ? 'text-amber-600' : 'text-amber-400'}`} />;
+      default:
+        return <FileText className={`w-4 h-4 ${themeMode === 'bright' ? 'text-blue-600' : 'text-blue-400'}`} />;
+>>>>>>> aa42170 (CrimeMtrix1)
     }
   };
 
@@ -1310,7 +1323,11 @@ export const CaseDetailModal: React.FC<CaseDetailModalProps> = ({
                           Click here to select a file/photo from your device
                         </p>
                         <p className={`text-[10px] font-semibold ${themeMode === 'bright' ? 'text-slate-600' : 'text-slate-400'}`}>
+<<<<<<< HEAD
                           Or drag and drop files directly here (Images, Videos, PDFs, Forensic Reports)
+=======
+                          Or drag and drop files directly here (Images, Videos, PDFs, Documents)
+>>>>>>> aa42170 (CrimeMtrix1)
                         </p>
                       </div>
                     )}
@@ -1349,7 +1366,10 @@ export const CaseDetailModal: React.FC<CaseDetailModalProps> = ({
                       <option value="Image">Image / Photograph</option>
                       <option value="Video">CCTV / Video Recording</option>
                       <option value="Audio">Audio / Wiretap</option>
+<<<<<<< HEAD
                       <option value="Forensic">Forensic Analysis</option>
+=======
+>>>>>>> aa42170 (CrimeMtrix1)
                     </select>
                   </div>
                 </div>
@@ -1467,7 +1487,10 @@ export const CaseDetailModal: React.FC<CaseDetailModalProps> = ({
                             <option value="Image">Image / Photograph</option>
                             <option value="Video">CCTV / Video Recording</option>
                             <option value="Audio">Audio / Wiretap</option>
+<<<<<<< HEAD
                             <option value="Forensic">Forensic Analysis</option>
+=======
+>>>>>>> aa42170 (CrimeMtrix1)
                           </select>
                         </div>
                       </div>
@@ -1538,24 +1561,46 @@ export const CaseDetailModal: React.FC<CaseDetailModalProps> = ({
                       }`}
                     >
                       <div className="flex items-start space-x-3 flex-1 min-w-0">
+<<<<<<< HEAD
                         <div className={`p-2 rounded-lg border mt-0.5 shrink-0 ${
                           themeMode === 'bright'
                             ? 'bg-slate-100 border-slate-300'
+=======
+                        <div className={`p-2 rounded-lg border mt-0.5 shrink-0 flex items-center justify-center ${
+                          themeMode === 'bright'
+                            ? 'bg-slate-100 border-slate-300 shadow-2xs'
+>>>>>>> aa42170 (CrimeMtrix1)
                             : 'bg-slate-800 border-slate-700'
                         }`}>
                           {getFileIcon(ev.fileType)}
                         </div>
                         <div className="flex-1 min-w-0">
+<<<<<<< HEAD
                           <div className="flex items-center space-x-2 flex-wrap">
                             <p className={`text-xs font-black font-mono ${themeMode === 'bright' ? 'text-slate-900' : 'text-slate-100'}`}>{ev.fileName}</p>
                             <span className={`text-[10px] px-2 py-0.2 rounded font-bold ${
                               themeMode === 'bright'
                                 ? 'bg-slate-200 text-slate-800'
                                 : 'bg-slate-800 text-slate-300'
+=======
+                          <div className="flex items-center space-x-2 flex-wrap gap-y-1">
+                            <p className={`text-xs sm:text-sm font-black tracking-tight break-all ${
+                              themeMode === 'bright'
+                                ? 'font-mono text-slate-950 font-black'
+                                : 'font-mono text-slate-100'
+                            }`}>
+                              {ev.fileName}
+                            </p>
+                            <span className={`text-[10px] px-2 py-0.5 rounded-md font-bold border ${
+                              themeMode === 'bright'
+                                ? 'bg-slate-100 text-slate-800 border-slate-300 shadow-2xs'
+                                : 'bg-slate-800 text-slate-300 border-slate-700'
+>>>>>>> aa42170 (CrimeMtrix1)
                             }`}>
                               {ev.fileSize}
                             </span>
                           </div>
+<<<<<<< HEAD
                           <p className={`text-xs mt-0.5 font-semibold ${themeMode === 'bright' ? 'text-slate-700' : 'text-slate-400'}`}>{ev.description}</p>
                           {ev.notes && (
                             <div className={`mt-2 p-2 rounded-lg text-xs font-medium flex items-start gap-1.5 border ${
@@ -1566,12 +1611,29 @@ export const CaseDetailModal: React.FC<CaseDetailModalProps> = ({
                               <MessageSquare className="w-3.5 h-3.5 shrink-0 mt-0.5 text-amber-500" />
                               <div>
                                 <span className={`font-extrabold text-[11px] block ${themeMode === 'bright' ? 'text-amber-900' : 'text-amber-400'}`}>Notes / Comments:</span>
+=======
+                          <p className={`text-xs mt-1 font-semibold leading-relaxed ${themeMode === 'bright' ? 'text-slate-800' : 'text-slate-300'}`}>{ev.description}</p>
+                          {ev.notes && (
+                            <div className={`mt-2 p-2.5 rounded-lg text-xs font-medium flex items-start gap-2 border ${
+                              themeMode === 'bright'
+                                ? 'bg-amber-50/90 border-amber-300 text-amber-950 shadow-2xs'
+                                : 'bg-slate-950/70 border-yellow-500/30 text-amber-200'
+                            }`}>
+                              <MessageSquare className="w-3.5 h-3.5 shrink-0 mt-0.5 text-amber-600" />
+                              <div>
+                                <span className={`font-black text-[11px] block ${themeMode === 'bright' ? 'text-amber-950' : 'text-amber-400'}`}>Notes / Comments:</span>
+>>>>>>> aa42170 (CrimeMtrix1)
                                 <span className="leading-snug">{ev.notes}</span>
                               </div>
                             </div>
                           )}
+<<<<<<< HEAD
                           <p className={`text-[10px] mt-1 font-bold ${themeMode === 'bright' ? 'text-amber-900' : 'text-yellow-400/80'}`}>
                             Uploaded by: <strong>{ev.uploadedBy}</strong> ({ev.uploadedByRole}) • {ev.uploadedAt}
+=======
+                          <p className={`text-[10px] mt-1.5 font-bold ${themeMode === 'bright' ? 'text-slate-600' : 'text-yellow-400/80'}`}>
+                            Uploaded by: <strong className={themeMode === 'bright' ? 'text-slate-900 font-extrabold' : 'text-slate-200'}>{ev.uploadedBy}</strong> ({ev.uploadedByRole}) • {ev.uploadedAt}
+>>>>>>> aa42170 (CrimeMtrix1)
                           </p>
                         </div>
                       </div>

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "Remix Remix Remix Remix Remix Remix Remix Remix Remix Crime Matrix new",
+=======
+  "name": "Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Crime Matrix new",
+>>>>>>> aa42170 (CrimeMtrix1)
   "description": "Crime Justice Portal - Role-based crime management, suspect tracking, evidence handling, and investigation dashboard.",
   "requestFramePermissions": [],
   "majorCapabilities": [

@@ -1,11 +1,42 @@
 @import "tailwindcss";
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+=======
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
+>>>>>>> aa42170 (CrimeMtrix1)
 
 :root {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color-scheme: dark;
 }
 
+<<<<<<< HEAD
+=======
+/* Official Mathematical Sans-Serif font style for Forensic Evidence */
+.font-math-sans {
+  font-family: 'Cambria Math', 'STIX Two Math', 'STIX Two Text', 'Latin Modern Math', 'KaTeX_Math', math, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+@keyframes scanline {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0.8;
+  }
+}
+
+.animate-scanline {
+  animation: scanline 2.2s ease-in-out infinite alternate;
+}
+
+>>>>>>> aa42170 (CrimeMtrix1)
 body {
   margin: 0;
   padding: 0;

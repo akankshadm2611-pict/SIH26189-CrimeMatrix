@@ -42,9 +42,18 @@ export const DspFirOcrScannerModal: React.FC<DspFirOcrScannerModalProps> = ({
     const lower = file.name.toLowerCase();
     let matchedPreset = sampleOcrPresets[0];
     if (lower.includes('cyber') || lower.includes('fraud') || lower.includes('upi') || lower.includes('phish')) {
+<<<<<<< HEAD
       matchedPreset = sampleOcrPresets.find((p) => p.id === 'preset-cyber-fraud') || sampleOcrPresets[0];
     } else if (lower.includes('theft') || lower.includes('burglary') || lower.includes('commercial') || lower.includes('shop')) {
       matchedPreset = sampleOcrPresets.find((p) => p.id === 'preset-burglary') || sampleOcrPresets[0];
+=======
+      matchedPreset = sampleOcrPresets.find((p) => p.id === 'preset-cyber-phishing') || sampleOcrPresets[0];
+    } else if (lower.includes('bank') || lower.includes('heist') || lower.includes('vault')) {
+      matchedPreset = sampleOcrPresets.find((p) => p.id === 'preset-bank-heist') || sampleOcrPresets[0];
+    } else {
+      // Default: Official Maharashtra Police FIR (Form No. 1): SBI ATM Robbery - Hinjawadi
+      matchedPreset = sampleOcrPresets.find((p) => p.id === 'preset-hinjawadi-atm') || sampleOcrPresets[0];
+>>>>>>> aa42170 (CrimeMtrix1)
     }
     setActivePresetId(matchedPreset.id);
 
@@ -74,12 +83,20 @@ export const DspFirOcrScannerModal: React.FC<DspFirOcrScannerModalProps> = ({
         setIsScanning(false);
         setIsDone(true);
 
+<<<<<<< HEAD
         // Auto-fill extracted data
         const preset = sampleOcrPresets.find((p) => p.id === targetPresetId) || sampleOcrPresets[0];
         const finalData: Partial<FirChecklistState> = {
           ...preset.extractedData,
           firNumber: `FIR-2026-${Math.floor(1000 + Math.random() * 9000)}`,
           policeFirNo: `CR-2026-${Math.floor(1000 + Math.random() * 9000)}`,
+=======
+        // Auto-fill extracted data accurately matching the document
+        const preset = sampleOcrPresets.find((p) => p.id === targetPresetId) || sampleOcrPresets[0];
+        const finalData: Partial<FirChecklistState> = {
+          ...preset.extractedData,
+          firNumber: preset.extractedData.firNumber || `FIR-2026-${Math.floor(1000 + Math.random() * 9000)}`,
+>>>>>>> aa42170 (CrimeMtrix1)
         };
         setTimeout(() => {
           onScanSuccess(finalData);
@@ -95,15 +112,23 @@ export const DspFirOcrScannerModal: React.FC<DspFirOcrScannerModalProps> = ({
     setImageFileName(`${preset.name}.png`);
     // Sample placeholder image representation
     setSelectedImage('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=600');
+<<<<<<< HEAD
     startOcrScan('', preset.name);
+=======
+    startOcrScan('', preset.name, preset.id);
+>>>>>>> aa42170 (CrimeMtrix1)
   };
 
   const handleConfirmAutoFill = () => {
     const preset = sampleOcrPresets.find((p) => p.id === activePresetId) || sampleOcrPresets[0];
     const finalData: Partial<FirChecklistState> = {
       ...preset.extractedData,
+<<<<<<< HEAD
       firNumber: `FIR-2026-${Math.floor(1000 + Math.random() * 9000)}`,
       policeFirNo: `CR-2026-${Math.floor(1000 + Math.random() * 9000)}`,
+=======
+      firNumber: preset.extractedData.firNumber || `FIR-2026-${Math.floor(1000 + Math.random() * 9000)}`,
+>>>>>>> aa42170 (CrimeMtrix1)
     };
     onScanSuccess(finalData);
     onClose();

@@ -1,34 +1,63 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# SIH26189-CrimeMatrix
-=======
-=======
->>>>>>> aa42170 (CrimeMtrix1)
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Crime Matrix
 
-# Run and deploy your AI Studio app
+## Overview
 
-This contains everything you need to run your app locally.
+Crime Matrix is an AI-powered investigation intelligence platform that helps investigators analyze and connect data from multiple sources such as FIRs, call records, evidence, locations, financial transactions, and witness statements.
 
-<<<<<<< HEAD
-View your app in AI Studio: https://ai.studio/apps/8796d358-74d8-4e4f-aa82-230ca153790b
-=======
-View your app in AI Studio: https://ai.studio/apps/74c06cbd-0d82-4c2a-b0eb-5909f43f32ed
->>>>>>> aa42170 (CrimeMtrix1)
+## Problem Statement
 
-## Run Locally
+* Investigation data is fragmented across multiple sources.
+* Manual analysis is time-consuming.
+* Hidden relationships are difficult to identify.
+* Large amounts of unstructured data slow investigations.
 
-**Prerequisites:**  Node.js
+## Solution
 
+* Centralized investigation platform.
+* AI-based relationship analysis.
+* Timeline reconstruction.
+* Interactive evidence and suspect network visualization.
+* Investigation support through intelligent insights.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
-<<<<<<< HEAD
->>>>>>> 6c16a10 (CrimeMatrix)
-=======
->>>>>>> aa42170 (CrimeMtrix1)
+## Features
+
+* Timeline Reconstruction
+* Hidden Connection Discovery
+* Evidence Relationship Graph
+* Criminal Network Analysis
+* Contradiction Detection
+* Identity Resolution
+* Communication Pattern Analysis
+* Location Intelligence
+* AI Investigation Assistant
+* Investigation Gap Detection
+
+## Technology Stack
+
+* Frontend: HTML, CSS, JavaScript
+* Backend: Node.js / Python
+* Database: MySQL / MongoDB
+* AI: NLP, Machine Learning, Graph Analytics
+
+## Workflow
+
+1. Collect data from multiple sources.
+2. Process and organize information.
+3. Analyze relationships using AI.
+4. Generate timelines and network graphs.
+5. Provide investigation insights.
+
+## Objectives
+
+* Connect fragmented investigation data.
+* Improve investigation efficiency.
+* Discover hidden relationships.
+* Support evidence-based investigations.
+
+## Future Scope
+
+* Advanced graph analysis
+* Geospatial intelligence
+* Automated report generation
+* Multilingual support
+* Cross-case analysis
